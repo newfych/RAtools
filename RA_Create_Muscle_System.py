@@ -1,9 +1,12 @@
 from pymel.core import *
 
-muscle__list = []
+import RA_muscles_data
+reload (RA_muscles_data)
+
+muscle_list=[]  
 
 def create(*args):
-    print 'create'
+    importData()
     gender = radioCollection('ChooseGender', query=True, sl=True)
     print gender
     if gender == 'Female':
@@ -22,6 +25,11 @@ def createMuscleNode(*args):
             print 'node exists'
     except:
         RAmuscle = createNode('materialInfo', n = 'RAmuscle')
-        print 'node created'
+        global muscle_list
+        muscle_list = RA_muscles_data.muscle_list[:]
         addAttr( sn='ml', ln='muscle_list', dt = 'stringArray')
         setAttr('RAmuscle.ml', muscle_list)
+        createCurves()
+
+def createCurves():
+        print muscle_list

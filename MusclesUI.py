@@ -34,7 +34,6 @@ def checkForMuscleNode(*args):
     
 # CREATE MUSCLE SYSTEM
 def createMuscleSystem(*args):
-    print 'create section'
     import RA_Create_Muscle_System
     reload (RA_Create_Muscle_System)
     RA_Create_Muscle_System.create()
