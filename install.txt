@@ -1,0 +1,6 @@
+1. Extract folder "RAtools" to the root of disc C  - (C:\RAtools).
+2. Copy RAtools_Free.py to  Maya plugins directory - (C:\Program Files\Autodesk\Maya2015\bin\plug-ins).
+3. In Maya select - "Window"->""Settings/Preferences"->"Plug-in Manager".
+4. Find "RAtools_Free" & check "Loaded" checkbox.
+5. Open UI with from main menu -> "RA tools" -> "RA Hairs UI"
+6. My email: newfych@yahoo.com

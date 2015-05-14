@@ -1,0 +1,53 @@
+from pymel.core import *
+    
+####################################    
+def openUI(*args):
+    closeUI()
+    RAwindow = window( 'HairsUI', title='RA hairs tool', iconName='RA', widthHeight=(300, 400) )
+    columnLayout( adjustableColumn = True)
+    
+    frameLayout( label='Convert hair strips', borderStyle='in', collapsable=True, collapse=False)
+    columnLayout(adjustableColumn = True, rowSpacing = 10)
+    
+    text( label = 'Steps:')
+    text( label='1. Separate mesh, imported from ZBrush.', align = 'left')
+    text( label='2. Hide all objects in your scene, except for hair strips.', align = 'left')
+    text( label='3. Press "Convert" button. :)', align = 'left')
+    button( label='Convert', command = convertHairStrips )
+    setParent( '..' )
+    setParent( '..' )
+    
+    #frameLayout( label='Edit hair strips', borderStyle='in', cc = resizeBack, ec = resizeForEdit, collapsable=True, collapse=False)
+    #columnLayout(adjustableColumn = True)
+    
+    #text( label=' scene')
+    #setParent( '..' )
+    #setParent( '..' )
+    
+    #button( label='Close', command = closeUI, align = 'left')
+    
+    window( 'HairsUI', edit = True, widthHeight=(300, 400) )
+    showWindow( RAwindow)
+    
+def closeUI(*args):
+    try:
+        deleteUI('HairsUI')
+    except:
+        pass
+
+####################################   
+def resizeForEdit(*args):
+    print "1"
+    #window( 'HairsUI', edit = True, widthHeight=(300, 600) )
+    
+def resizeBack(*args)
+    #window( 'HairsUI', edit = True, widthHeight=(300, 300) )
+    print "2"
+        
+####################################       
+def convertHairStrips(*args):
+    import RAhairs
+    reload (RAhairs)
+    RAhairs.convert()
+    
+openUI()
