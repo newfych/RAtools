@@ -28,7 +28,7 @@ def checkForMuscleNode(*args):
         if len(n) != 0:
             RAmuscle = n[0]
             edit_mode = True
-            print 'node exists'
+            #print 'node exists'
     except:
         pass
     
@@ -71,7 +71,7 @@ def openCreateUI(*args):
     #######################
     # START FRAME
     #######################
-    frameLayout('CreateFrame', l='Create muscle system', borderStyle='in', ec=resizeBack, cll=True, cl=(edit_mode))
+    frameLayout('CreateFrame', l='Create muscle system')
     columnLayout('CL1', adjustableColumn = True)
     separator( h = 5, st = 'none')
     text(l='Steps:', fn='boldLabelFont', h=20)
@@ -116,7 +116,7 @@ def openEditUI(*args):
     #####################
     # EDIT FRAME
     #####################
-    frameLayout('EditFrame',l='Edit muscles', cc=resizeBack, ec=resizeForEdit, en=edit_mode, cll=True, cl=( not edit_mode))
+    frameLayout('EditFrame',l='Edit muscles')
     columnLayout(adjustableColumn = True)
     
     
